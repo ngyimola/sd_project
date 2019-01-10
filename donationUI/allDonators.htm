@@ -1,0 +1,40 @@
+<div>
+  <select ng-model = "typeFilter" name ="typeFilter" ng-selected = "all">
+    <option value="all">All</option>
+    <option value="0">0</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="AB">AB</option>
+  </select>
+  <select ng-model = "rhFilter" name ="rhFilter" ng-selected = "all">
+    <option value="all">All</option>
+    <option value="+">+</option>
+    <option value="-">-</option>
+  </select>
+  <input type="submit" name="filterDonators" value="Filter" ng-click = "filterDonators()"/>
+  <input type="submit" name="notifyAllDonators" value="Notify All" ng-click = "notifyAllDonators()"/>
+
+  <table>
+      <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date of birth</th>
+            <th>Blood Type</th>
+            <th>Phone number</th>
+            <th>Currently active</th>
+            <th></th>
+      </tr>
+      <tr ng-repeat="item in donators">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.dateOfBirt}}</td>
+        <td>{{item.bloodType}}{{item.rh}}</td>
+        <td>{{item.phoneNumber}}</td>
+        <td><input type= "checkbox" ng-model="item.isActive" ng-change="updateDonator(item)"/></td>
+        <td><input type= "submit" name="notifyDonator" value="Notify" ng-click = "notifyDonator(item.name)"/></td>
+      </tr>
+  </table>
+
+
+
+</div>

@@ -1,0 +1,19 @@
+<div ng-click="getDonations()"
+      ng-init = "getDonations()"
+      ng-focus = "getDonations()"
+>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Amount(ml)</th>
+      <th>Status</th>
+      <th>Results/observations</th>
+  </tr>
+        <tr ng-repeat="item in donations">
+          <td>{{item.date}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.state}}</td>
+          <td>{{item.results}}</td>
+        </tr>
+  </table>
+</div>

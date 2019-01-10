@@ -1,0 +1,35 @@
+<div ng-click="getAllAppointments()"
+      ng-init = "getAllAppointments()"
+      ng-focus = "getAllAppointments()"
+>
+
+  <table>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Blood Type</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="item in appointments">
+          <td>{{item.id}}</td>
+          <td>{{item.date | date:"dd/MM/yyyy"}}</td>
+          <td>{{item.donatorName}}</td>
+          <td>{{item.bloodType}}{{item.rh}}</td>
+          <td>
+            <input type= "submit" ng-click="acceptAppointment(item.id)" value = "Accept"/>
+            <input type= "submit" ng-click="rejectAppointment(item.id)" value = "Delete"/>
+          </td>
+        </tr>
+  </table>
+</div>
+
+<div name=acceptedAppointment ng-hide = "acceptedAppDivHidden">
+  <form name="addDonationFromApp" ng-submit="saveDonation(donQuantity)">
+    <label>ID: </label>
+    <input type = "text" ng-model="acceptedAppointmentId" />
+    <label>Quantity:</label>
+    <input type = "text" ng-model = "donQuantity"/>
+    <input type="submit" value="Save" ng-disabled="addDonationFromApp.$invalid"/>
+  </form>
+</div>

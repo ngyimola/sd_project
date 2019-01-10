@@ -1,0 +1,9 @@
+<form ng-model = "createAppointmenForm">
+  <label for="appDate">Select date:</label>
+  <input type="date" name="appDate" ng-model="appointmentDate" ng-change="getAvailableHours()"/>
+
+  <label for="appHour">Select hour:</label>
+  <select name="appHour" ng-model = "appointmentHour" ng-options="option for option in availableHours" >
+  </select>
+  <button ng-click="addAppointment()">Create</button>
+</form>

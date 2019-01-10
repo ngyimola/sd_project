@@ -1,0 +1,32 @@
+<div  elem-ready = "getAllDonations()"
+      ng-init = "getAllDonations()"
+
+      >
+
+  <table>
+      <tr >
+        <th ng-click="getAllDonations()">ID</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Blood Type</th>
+            <th>State</th>
+            <th>Message</th>
+            <th></th>
+      </tr>
+        <tr ng-repeat="item in donations">
+          <td>{{item.id}}</td>
+          <td>{{item.date}}</td>
+          <td>{{item.donatorName}}</td>
+          <td>{{item.bloodType}}{{item.rh}}</td>
+          <td><select ng-model = "item.state" ng-change = updateDonation(item)>
+              <option value="processing">processing</option>
+              <option value="accepted">accepted</option>
+              <option value="rejected">rejected</option>
+              <option value="shipped">shipped</option>
+              <option value="expired">expired</option>
+          </select></td>
+          <td><input type="text" ng-model = "item.message"></td>
+          <td><input type= "submit" ng-click="updateDonation(item)" value = "Update"/></td>
+        </tr>
+  </table>
+</div>

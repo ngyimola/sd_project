@@ -1,0 +1,17 @@
+<div ng-click="getAppointments($scope.loggedInUser.username)"
+      ng-init = "getAppointments($scope.loggedInUser.username)"
+      ng-change= "getAppointments($scope.loggedInUser.username)"
+      ng-focus = "getAppointments($scope.loggedInUser.username)"
+      ng-model = "appointments">
+
+  <table>
+      <tr>
+        <td>Date</td>
+        <td>Delete appointment</td>
+      </tr>
+        <tr ng-repeat="item in appointments">
+          <td>{{item.date}}</td>
+          <td><input type= "submit" ng-click="removeAppointment(item.id)" value = "Delete"/></td>
+        </tr>
+  </table>
+</div>

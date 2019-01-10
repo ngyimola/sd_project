@@ -1,0 +1,45 @@
+<div class="registerContainter">
+    <form name="registerForm" ng-submit="saveUser(userinfo)">
+      <label>Username: </label>
+      <input type = "text" name = "username" ng-model="userInfo.username" ng-required="true" ng-minlength="4"/>
+
+      <!-- $dirty is set to true if a user interacts with a element and then we check if the elements required field is true -->
+      <span class="error-message" ng-show="registerForm.username.$dirty && registerForm.username.$error.required">Must enter a username!</span>
+
+      <!-- Check if the element has been edited and whether it contains at least 2 characters -->
+      <span class="error-message" ng-show="registerForm.username.$dirty
+        && registerForm.username.$error.minlength">Must be a minimum of 4 characters!</span>
+
+      <label>Password: </label>
+      <input type = "password" name = "password" ng-model="userInfo.password" ng-required="true"/>
+      <!-- $dirty is set to true if a user interacts with a element and then we check if the elements required field is true -->
+      <span class="error-message" ng-show="registerForm.password.$dirty && registerForm.password.$error.required">Must enter a password!</span>
+
+      <label>Name: </label>
+      <input type = "text" name = "name" ng-model="userInfo.name" ng-required="true"/>
+      <span class="error-message" ng-show="registerForm.name.$dirty && registerForm.name.$error.required">Must enter a name!</span>
+
+      <label>Blood type: </label>
+      <select name="bloodtype" ng-model="userInfo.bloodType"  ng-required="false">
+          <option value="0">0</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="AB">AB</option>
+      </select>
+
+      <label>Rh: </label>
+      <select name="bloodtype" ng-model="userInfo.rh"  ng-required="false">
+          <option value="+">+</option>
+          <option value="-">-</option>
+      </select>
+
+      <label>Date of birth:</label>
+      <input type = "date" name = "dateOfBirth" ng-model="userInfo.dateOfBirth"  ng-required="true"/>
+      <span class="error-message" ng-show="registerForm.dateOfBirth.$dirty && registerForm.dateOfBirth.$error.required">Must enter your date of birth!</span>
+
+      <label>Phone number:</label>
+      <input type="text" name="phoneNumber" ng-model="userInfo.phoneNumber">
+
+      <input type="submit" value="Save" ng-disabled="registerForm.$invalid"/>
+    </form>
+  </div>

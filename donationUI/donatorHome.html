@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app = "donatorHome">
+  <head>
+    <title>Donation Center</title>
+    <LINK rel="stylesheet" href="general.css" type="text/css">
+    <LINK rel="stylesheet" href="home.css" type="text/css">
+    <style>
+      [ng\cloak], [ng-cloak], .ng-cloak {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+    <IMG src="img/header.jpg">
+    <nav>
+      <ul>
+        <li><a href = "#/!">Home</a></li>
+        <li><a href = "#!createAppointment">Create appointment</a></li>
+        <li><a href = "#!viewAppointment">View appointment</a></li>
+        <li><a href = "#!viewDonations">View donations</a></li>
+      </ul>
+    </nav>
+    <div ng-controller = "logOutCtrl">
+      <button class = logOut ng-click = logOut()>Log out </button>
+    </div>
+    <div class = "viewBox" ng-view></div>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="js/donatorHome.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+.main {
+  width: 90%;
+  margin: auto;
+  vertical-align: middle;
+  background-color: #f2f2f2;
+}
+ h1, h2 {
+   color: ##333333;
+   text-align: center;
+ }
+
+ h2 {
+   font-size: 25px;
+ }
+
+body{
+  background-color: white;
+}
+
+#loginDiv, #registerContainter {
+  width: 45%;
+  background-color: #DA251C;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  margin: auto;
+  padding: 20px;
+  display:inline-block;
+}
+
+#loginDiv {
+  float: left;
+}
+
+#registerContainter {
+  float: right;
+}
+
+input[type = text], input[type = password]
+{
+  border-radius: 5px;
+  color: gray;
+  display: block;
+  border: 0;
+  padding: 8px;
+  background-color: white;
+  margin:auto;
+  width: 95%;
+}
+
+input[type = date], select
+{
+  border-radius: 5px;
+  color: gray;
+  display: block;
+  border: 0;
+  padding: 8px;
+  background-color: white;
+}
+
+label, span, h3
+{
+  color: white;
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  clear: both;
+}
+
+h3 {
+  font-size: 21px;
+  text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+button, input[type = submit]
+{
+  border-radius: 5px;
+  display: inline;
+  font-size: 16px;
+  color: black;
+  border: none;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  width: 20%;
+  vertical-align: middle;
+}
